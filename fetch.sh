@@ -89,21 +89,20 @@ get_colors() {
 #--- ascii art ------
 print_ascii() {
     cat << 'EOF'
-
-
-             -+=           
-            =+++=
-           -+= =+=
-          =+=   =+=
-   =++++++==     ==++++++=
-   .++=               :++=
-     =++=           .+*=
-       =++         =+=
-        ++         =+=
-       =+=   ===   :+=
-       =+==++===++==++
-       =++=       ==++
-      
+    
+    
+        
+                   x.XxX$$$$$$$$$$$$:::
+                 x.:..: ... ..&&$.......:
+               x.+:..: .&&.&.+&&;:$;;.;+;:X;
+             $$++XxX$$$$$$$$$$$$:..:;;++;;;;:
+   xX$$$$$$$$$$$$$$$$$$$$$$X+++;;xX$$$$$$$;::
+  +.x:...... ..... .:$$$X+++;;;xX$$$$$$$;:..:
+ x. X.......:..X;.:&;+;;;;;   ;;xX$$$$$$$...
++;;;$$$$$$$&&&$$$$$$$$$;;;     ;;;::::;;:..;
+ ;.;.;::;;;;;;;;+;;X;;;;;;     ;;;;;:
+ XX$XX;:;.::;;+;;;;;;;;;;;
+                   
 EOF
 }
 
@@ -122,17 +121,17 @@ main() {
     local info=()
     info+=("${BOLD}$(get_user)${RESET}@${BOLD}$(get_hostname)${RESET}")
     info+=("\033[0m$(printf '─%.0s' {1..38})")
-    info+=("${PINK}${BOLD}OS${RESET}            $(get_os) $(get_version)")
-    info+=("${PINK}${BOLD}Kernel${RESET}        $(get_kernel)")
-    info+=("${PINK}${BOLD}Shell${RESET}         $(get_shell)")
-    info+=("${PINK}${BOLD}Uptime${RESET}        $(get_uptime)")
-    info+=("${PINK}${BOLD}CPU${RESET}           $(get_cpu)")
-    info+=("${PINK}${BOLD}GPU${RESET}           $(get_gpu)")
-    info+=("${PINK}${BOLD}Packages${RESET}      $(get_packages)")
-    info+=("${PINK}${BOLD}Resolution${RESET}    $(get_resolution)")
-    info+=("${PINK}${BOLD}Power${RESET}         $(get_power)")
-    info+=("${PINK}${BOLD}Memory${RESET}        $(get_memory)")
-    info+=("${PINK}${BOLD}Disk${RESET}          $(get_disk)")
+    info+=("${GREEN}${BOLD}OS${RESET}            $(get_os) $(get_version)")
+    info+=("${GREEN}${BOLD}Kernel${RESET}        $(get_kernel)")
+    info+=("${GREEN}${BOLD}Shell${RESET}         $(get_shell)")
+    info+=("${GREEN}${BOLD}Uptime${RESET}        $(get_uptime)")
+    info+=("${GREEN}${BOLD}CPU${RESET}           $(get_cpu)")
+    info+=("${GREEN}${BOLD}GPU${RESET}           $(get_gpu)")
+    info+=("${GREEN}${BOLD}Packages${RESET}      $(get_packages)")
+    info+=("${GREEN}${BOLD}Resolution${RESET}    $(get_resolution)")
+    info+=("${GREEN}${BOLD}Power${RESET}         $(get_power)")
+    info+=("${GREEN}${BOLD}Memory${RESET}        $(get_memory)")
+    info+=("${GREEN}${BOLD}Disk${RESET}          $(get_disk)")
     info+=("")
     info+=("$(get_colors | head -1)")
     info+=("$(get_colors | tail -1)")
@@ -142,7 +141,7 @@ main() {
     for (( i=0; i<total; i++ )); do
         local art_line="${art[$i]:-}"
         local info_line="${info[$i]:-}"
-        printf "\033[38;5;183m%-40s  %b\n" "$art_line" "$info_line"
+        printf "\033[38;5;208m%-46s  %b\n" "$art_line" "$info_line"
     done
 
     echo "" 
