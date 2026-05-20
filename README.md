@@ -1,6 +1,6 @@
-# fetch
+# carfetch
 
-> A custom macOS system fetch script. Displays system info alongside ASCII art every time you open a terminal.
+> A custom macOS system fetch script. Made for car guys
 
 ![fetch preview](preview.png)
 
@@ -46,6 +46,21 @@ That's it. The installer will:
 
 ---
 
+## Customization
+
+There are already 3 cars inside the `ascii.txt` file: 
+
+- BMW e30 M3 (default)
+- Nissan R34 GRT
+- 997 Porche 911 Turbo
+
+There are also BMW M logos for M3,M4,M5 macs
+![m3 preview](image.png)
+
+All the info functions are at the top of `fetch.sh`. You can add, remove, or reorder any field in the `info` array inside `main()`. The ASCII art lives in `print_ascii()` — swap it out with anything you want.
+
+---
+
 ## Manual installation
 
 If you'd rather do it yourself:
@@ -69,6 +84,4 @@ fetch
 
 ---
 
-## Customization
 
-All the info functions are at the top of `fetch.sh`. You can add, remove, or reorder any field in the `info` array inside `main()`. The ASCII art lives in `print_ascii()` — swap it out with anything you want.
